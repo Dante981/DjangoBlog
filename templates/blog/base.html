@@ -5,7 +5,8 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
 <body>
     <div id="content">
         {% block content %}
@@ -29,5 +30,6 @@
             {% endfor %}
         </ul>
     </div>
+    <script>hljs.highlightAll();</script> 
 </body>
 </html>
