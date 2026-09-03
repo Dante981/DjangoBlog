@@ -31,6 +31,9 @@ SECRET_KEY = 'django-insecure-w5+s6l@7yg*$44jfgy8rt$(hg(j%)h&@6veev*&=#gm%aec3hu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = "/"
+
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -134,6 +138,8 @@ STATIC_URL = 'static/'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')
+SERVER_EMAIL = os.getenv('EMAIL_HOST_USER')
 
 
 MAILERS = {
